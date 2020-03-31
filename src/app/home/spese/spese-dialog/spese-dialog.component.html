@@ -1,0 +1,99 @@
+
+<nb-card>
+  <nb-card-body>
+
+    <nb-tabset>
+      <nb-tab tabTitle="Spese" tabIcon="list-outline" responsive>
+        <form #f="ngForm" (ngSubmit)="saveSpesa(f.value)">
+          <nb-card>
+            <nb-card-header>Spese</nb-card-header>
+            <nb-card-body>
+              
+                <input type="hidden" name="id" [ngModel]="spesa?.id">
+                <!-- Descrizione spesa -->
+                  <div class="form-group">
+                    <label for="nome_spesa" class="label">Descrizione spesa</label>
+                    <input type="text" nbInput fullWidth minlength="3" #nome_spesa="ngModel" required placeholder="Descrizione spesa"
+                    [ngModel]="spesa?.nome_spesa" name="nome_spesa" id="nome_spesa" >
+                    {{nome_spesa.required}}
+
+
+                      <div  *ngIf="nome_spesa.errors.required">
+                        Il campo descrizione è obbligatorio
+                      </div>
+
+                 
+                </div>
+      <!-- category -->
+              <div class="form-group"> 
+                  <label for="category" class="label">Categoria</label>
+                  <nb-select [ngModel]="spesa?.category"  id="category" name="category">
+                    <nb-option [value]="category.id" *ngFor="let category of this.categories" > {{category.nome_category}}</nb-option>
+                  </nb-select>
+
+
+              </div>
+                <!-- Data -->
+                <div class="form-group">
+                  <label for="data" class="label">Data</label>
+                  <!--input type="date" nbDate   #data="ngModel"
+                  [ngModel]="spesa?.data" name="data" id="data" -->  
+                  <input nbInput
+                  placeholder="Form Picker"
+                  [nbDatepicker]="formpicker">
+           <nb-datepicker #formpicker></nb-datepicker>               
+                </div>
+                
+                <!-- Importo -->
+                <div class="form-group">
+                  <label for="importo" class="label">Importo</label>
+                  <input type="number" nbInput fullWidth required #importo="ngModel" required placeholder='0.00'
+                  [ngModel]="spesa?.importo" name="importo" id="importo" step='0.01' value='0.00' >
+                  <div *ngIf="importo.dirty && importo.touched && importo.invalid">
+
+                    <div *ngIf="importo.errors.required">
+                      Il campo importo è obbligatorio
+                    </div>
+                  </div>
+                </div>
+                <!--nb-card-footer>
+                  <p></p>
+                  <button type="submit" nbButton status="danger"  [disabled]="f.pristine">Salva</button>
+                </nb-card-footer-->
+
+             
+            </nb-card-body>
+            <nb-card-footer>
+              <button class="cancel" nbButton status="danger" (click)="cancel()">Cancel</button>
+              <button nbButton status="success"  [disabled]="!f.valid">Submit</button>
+            </nb-card-footer>
+          </nb-card>
+        </form>
+
+
+
+      </nb-tab>
+      <nb-tab tabTitle="Trasferimenti" tabIcon="car-outline" responsive>
+
+
+      </nb-tab>
+      <nb-tab tabTitle="Entrate" tabIcon="briefcase" responsive>
+
+        <!--nb-card>
+          <nb-card-body class="example-items-col">
+            <input type="text" nbInput placeholder="Text field">
+            <input type="text" nbInput fullWidth fieldSize="small" placeholder="Input" [(ngModel)]="inputItemNgModel">
+            <!--input type="text" nbInput fullWidth fieldSize="small" placeholder="Input" [(ngModel)]="inputItemNgModel"-->
+            <!--textarea nbInput fullWidth placeholder="Textarea" [(ngModel)]="textareaItemNgModel"></textarea>
+           
+          </nb-card-body>
+        </nb-card-->
+      </nb-tab>
+    </nb-tabset>
+
+  </nb-card-body>
+</nb-card>
+
+
+
+          

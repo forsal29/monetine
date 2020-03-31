@@ -1,0 +1,26 @@
+<div class="row">
+  <ng-container *ngFor="let sa of saldo">
+  <div class="col-xxxl-3 col-md-6" *ngIf="sa.preview == 1">
+
+    <!--ngx-status-card [title]="sa.nome_conto" type="success">--
+      <i class="nb-roller-shades"></i>
+    </ngx-status-card-->
+    <!--nb-card (click)="on = !on" [ngClass]="{'off': !on}"-->
+    <nb-card [ngClass]="{'off': !on}">
+      <div class="icon-container">
+        <div class="icon status-success">
+          <!--ng-content> 
+            <i class="nb-roller-shades"></i></ng-content-->
+            <nb-icon icon='book-open-outline'></nb-icon>
+        </div>
+      </div>
+
+      <div class="details">
+        <div class="title h5">{{ sa.nome_conto }}</div>
+        <div class="z1">{{ sa.totale | currency:'EUR' }}</div>
+      </div>    
+    </nb-card>
+  </div>
+  </ng-container >
+</div>
+
