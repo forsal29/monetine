@@ -15,14 +15,9 @@
                     <label for="nome_spesa" class="label">Descrizione spesa</label>
                     <input type="text" nbInput fullWidth minlength="3" #nome_spesa="ngModel" required placeholder="Descrizione spesa"
                     [ngModel]="spesa?.nome_spesa" name="nome_spesa" id="nome_spesa" >
-                    {{nome_spesa.required}}
-
-
                       <div  *ngIf="nome_spesa.errors.required">
                         Il campo descrizione è obbligatorio
-                      </div>
-
-                 
+                      </div>                
                 </div>
       <!-- category -->
               <div class="form-group"> 

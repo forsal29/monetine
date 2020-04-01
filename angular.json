@@ -28,8 +28,6 @@
               "src/assets"
             ],
             "styles": [
-              //"src/styles.scss",
-             // "node_modules/bootstrap/dist/css/bootstrap.css",
               "src/app/style/styles.scss",
               "node_modules/nebular-icons/scss/nebular-icons.scss"
               
