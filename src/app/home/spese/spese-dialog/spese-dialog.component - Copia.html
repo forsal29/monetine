@@ -41,7 +41,7 @@
           <div class="form-group">
             <label for="data" class="label">Data</label>
             <input nbInput [(ngModel)]="this.mySpesa.data" #data="ngModel"
-            name="data" id="data" [nbDatepicker]="formpicker1" class="date"   (ngModelChange)="dataChanged($event)" >
+            name="data" id="data" [nbDatepicker]="formpicker1" class="date"  >
             <nb-datepicker #formpicker1 format="dd.MM.yyyy" ></nb-datepicker>               
           </div>
           
@@ -57,7 +57,6 @@
               </div>
             </div>
           </div>
-         <!--  SPESA RIPETUTA *************-->
           <div class="form-group checkbox">
             <nb-checkbox [(ngModel)]="mySpesa.ripetuta"  #ripetuta="ngModel" name="ripetuta" (checkedChange)="toggle($event)">Spesa Ripetuta</nb-checkbox>
             <nb-select *ngIf="checked" [(ngModel)]="mySpesa.rip_time"  id="rip_time" name="rip_time" size="small" (selectedChange)="onDateCalc($event)">
@@ -66,12 +65,6 @@
               <nb-option value="3" >Ogni anno</nb-option>
             </nb-select>
           </div>
-          <div class="form-group" *ngIf="checked">
-            <label for="datafutura" class="label">Prossima data</label>
-          <input nbInput [(ngModel)]="mySpesa.datafutura" #datafutura="ngModel"
-            name="datafutura" id="datafutura" class="date" disabled >
-          </div>
-          <!--  SPESA FUTURA *************-->
           <div class="form-group checkbox">
             <nb-checkbox [(ngModel)]="mySpesa.futura"  #futura="ngModel" name="futura">Spesa Futura</nb-checkbox>
           </div>
@@ -138,21 +131,14 @@
                     </div>
                   </div>
                 </div>
-                <!--  TRASF RIPETUTA *************-->
                 <div class="form-group checkbox">
                   <nb-checkbox [(ngModel)]="mySpesa.ripetuta"  #ripetuta="ngModel" name="ripetuta" (checkedChange)="toggle($event)">Trasferimento Ripetuto</nb-checkbox>
-                  <nb-select *ngIf="checked" [(ngModel)]="mySpesa.rip_time"  id="rip_time" name="rip_time" size="small" (selectedChange)="onDateCalc($event)">
+                  <nb-select *ngIf="checked" [(ngModel)]="mySpesa.rip_time"  id="rip_time" name="rip_time" size="small" (selectedChange)="onDateCalc($event)" >
                     <nb-option value="1" >Ogni settimana</nb-option>
                     <nb-option value="2" >Ogni mese</nb-option>
                     <nb-option value="3" >Ogni anno</nb-option>
                   </nb-select>
                 </div>
-                <div class="form-group" *ngIf="checked">
-                  <label for="datafutura" class="label">Prossima data</label>
-                <input nbInput [(ngModel)]="mySpesa.datafutura" #datafutura="ngModel"
-                  name="datafutura" id="datafutura" class="date" disabled >
-                </div>
-                <!--  TRASF FUTURA *************-->
                 <div class="form-group checkbox">
                   <nb-checkbox [(ngModel)]="mySpesa.futura"  #futura="ngModel" name="futura">Trasferimento Futuro</nb-checkbox>
                 </div>
@@ -220,25 +206,18 @@
                     </div>
                   </div>
                 </div>
-                         <!--  entrata RIPETUTA *************-->
                 <div class="form-group checkbox">
                   <nb-checkbox [(ngModel)]="mySpesa.ripetuta"  #ripetuta="ngModel" name="ripetuta" (checkedChange)="toggle($event)">Entrata Ripetuta</nb-checkbox>
-                  <nb-select *ngIf="checked" [(ngModel)]="mySpesa.rip_time"  id="rip_time" name="rip_time" size="small" (selectedChange)="onDateCalc($event)">
+                  <nb-select  *ngIf="checked" [(ngModel)]="mySpesa.rip_time"  id="rip_time" name="rip_time" size="small" (selectedChange)="onDateCalc($event)">
                     <nb-option value="1" >Ogni settimana</nb-option>
                     <nb-option value="2" >Ogni mese</nb-option>
                     <nb-option value="3" >Ogni anno</nb-option>
                   </nb-select>
-                </div>
-                <div class="form-group" *ngIf="checked">
-                  <label for="datafutura" class="label">Prossima data</label>
-                <input nbInput [(ngModel)]="mySpesa.datafutura" #datafutura="ngModel"
-                  name="datafutura" id="datafutura" class="date" disabled >
-                </div>
-                <!--  ENTRATA FUTURA *************-->
-                <div class="form-group">
-                    <label for="datafutura" class="label">Prossima data</label>
-                  <input nbInput [(ngModel)]="this.mySpesa.datafutura" #datafutura="ngModel"
-                    name="datafutura" id="datafutura" class="date" disabled >
+                  <div *ngIf="checked" class="form-group">
+                      <label for="datafutura" class="label">Prossima data</label>
+                    <input nbInput [(ngModel)]="this.mySpesa.datafutura" #datafutura="ngModel"
+                      name="datafutura" id="datafutura" class="date" disabled >
+                  </div>
                 </div>
                 <div class="form-group checkbox">
                   <nb-checkbox [(ngModel)]="mySpesa.futura"  #futura="ngModel" name="futura">Entrata Futura</nb-checkbox>

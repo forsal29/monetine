@@ -11,7 +11,7 @@ import { UserService } from 'src/app/services/user.service';
   styleUrls: ['./categorie.component.scss']
 })
 export class CategorieComponent implements OnInit {
-  private categories:Category[] = [];
+  private categories: Category[] = [];
   settings = {
     add: {
       addButtonContent: '<i class="nb-plus"></i>',

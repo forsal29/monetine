@@ -7,6 +7,7 @@ import { AuthGuard } from '../services/auth.guard';
 import { SpeseComponent } from './spese/spese.component';
 import { CategorieComponent } from './categorie/categorie.component';
 import { ContiComponent } from './conti/conti.component';
+import { AnalisiComponent } from './analisi/analisi.component';
 const routes: Routes = [
   {
     path: '',
@@ -32,6 +33,10 @@ const routes: Routes = [
       {
         path: 'conti',
         component: ContiComponent,
+      },
+      {
+        path: 'analisi',
+        component: AnalisiComponent,
       },/*
       {
         path: '',

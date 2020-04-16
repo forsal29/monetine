@@ -1,0 +1,12 @@
+@import '../../style/themes.scss';
+
+@include nb-install-component() {
+
+  nb-checkbox {
+    margin-right: 1rem;
+  }
+  .left {
+    margin-left: auto;
+  }
+
+}

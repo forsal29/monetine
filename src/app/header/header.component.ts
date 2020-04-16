@@ -38,7 +38,6 @@ export class HeaderComponent implements OnInit, OnDestroy {
     .pipe(takeUntil(this.destroy$))
     .subscribe((users: any) => this.user = users.nick);*/
     this.user = new User();
-    this.user.name = 'Pippo pluto';
     this.authService.onTokenChange()
     .subscribe((token: NbAuthOAuth2JWTToken) => {
     if (token.isValid()) {

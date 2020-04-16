@@ -24,14 +24,25 @@ export class HomeComponent implements OnInit {
       link: '/home/spese',
     },
     {
-      title: 'Categorie',
-      icon: 'browser-outline',
-      link: '/home/categorie',
+      title: 'Analisi',
+      icon: 'pantone-outline',
+      link: '/home/analisi',
     },
     {
-      title: 'Conti',
-      icon: 'grid-outline',
-      link: '/home/conti',
+      title: 'Impostazioni',
+      icon: 'options-2-outline',
+      children: [
+        {
+          title: 'Categorie',
+          icon: 'browser-outline',
+          link: '/home/categorie',
+        },
+        {
+          title: 'Conti',
+          icon: 'grid-outline',
+          link: '/home/conti',
+        },
+      ],
     },
   ];
   constructor(private dialogService: NbDialogService) { }

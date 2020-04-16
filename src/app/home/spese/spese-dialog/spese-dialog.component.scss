@@ -3,17 +3,27 @@
 @include nb-install-component() {
   nb-card {
     max-width: 600px;
-    max-height: 500px;
+    max-height: 650px;
   }
   nb-dataset {
     max-width: 600px;
-    max-height: 500px;
+    max-height: 650px;
   }
   
 
 
-  nb-select {
-    margin: 1rem;
+  .select {
+    margin-left: 1rem;
+    margin-top: 1rem;
+    width: 50%;
+  }
+  .date {
+    margin-left: 1rem;
+    margin-top: 1rem;
+    width: 70%;
+  }
+  .button{
+    margin: 0.5rem;
   }
 
   .form-inline [fullWidth] {
@@ -30,6 +40,12 @@
 
   :host nb-tab {
     padding: 1.25rem;
+  }
+  nb-checkbox:not(:only-child) {
+    margin-right: 1.5rem;
+  }
+  .checkbox {
+    margin-top: 1rem;
   }
 
 }

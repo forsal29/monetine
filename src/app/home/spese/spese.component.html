@@ -1,12 +1,19 @@
 <nb-card>
   <nb-card-header>
-    Spese
+    <div class="row">
+      <div>Transazioni</div> 
+      <div class="left" >
+        <nb-checkbox [(value)]="ch_ripetute" (checkedChange)="toggleRipetute($event)">Transazioni Ripetute</nb-checkbox>
+        <nb-checkbox [(value)]="ch_future" (checkedChange)="toggle($event)">Transazioni Future</nb-checkbox>
+      </div> 
+    </div>
+    
   </nb-card-header>
 
   <nb-card-body>
     <ng2-smart-table [settings]="settings" [source]="source" 
-    (deleteConfirm)="onDeleteConfirm($event)"      
-    (editConfirm)="onSaveConfirm($event)"
+    (delete)="onDelete($event)"      
+    (edit)="onEdit($event)"
     (create)="onCreate($event)">
     </ng2-smart-table>
   </nb-card-body>
