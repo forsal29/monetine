@@ -29,8 +29,12 @@ export class  AnalisiComponent {
   sortDirection: NbSortDirection = NbSortDirection.NONE;
 
   constructor(private dataSourceBuilder: NbTreeGridDataSourceBuilder<Analisi>,
-              private analisiService: Analisi) {
-    this.dataSource = this.dataSourceBuilder.create(this.data);
+              private analisiService: AnalisiService) {
+                this.analisiService.getAnalisiData().subscribe( res => { 
+                  this.data = res['data'];
+                  this.dataSource = this.dataSourceBuilder.create(this.data);
+              });
+    
   }
 
   updateSort(sortRequest: NbSortRequest): void {
@@ -45,8 +49,8 @@ export class  AnalisiComponent {
     return NbSortDirection.NONE;
   }
 
-  private data: TreeNode<Analisi>[] = [
-    {
+  private data: TreeNode<Analisi>[] = [];
+   /* {
       data: { categoria: 'Casa', date: '', descrizione:'' , tipo: '-', importo: '' },
       children: [
         { data: { categoria: 'Casa', date: '01/10/2019', descrizione: 'spesa' , tipo: 'Uscita', importo:'150 €' } },
@@ -56,7 +60,7 @@ export class  AnalisiComponent {
       ],
     },
     
-  ];
+  ];*/
 
   getShowOn(index: number) {
     const minWithForMultipleColumns = 400;

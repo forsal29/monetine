@@ -10,7 +10,7 @@ import { NbThemeModule, NbLayoutModule, NbContextMenuModule, NbActionsModule,
          NbMenuModule, NbIconModule, NbSearchModule, NbUserModule,NbInputModule, NbDatepickerModule } from '@nebular/theme';
 import { AuthGuard } from './services/auth.guard';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
-
+import { environment } from '../environments/environment';
 
 
 @NgModule({
@@ -42,9 +42,10 @@ import { NbEvaIconsModule } from '@nebular/eva-icons';
             key: 'access_token',
           },
      //     baseEndpoint: 'http://localhost:4000',
-          baseEndpoint: 'http://testmone-com.stackstaging.com/moneapi',
+     //     baseEndpoint: 'http://testmone-com.stackstaging.com/moneapi',
+          baseEndpoint: environment.apiEndpoint,
           login: {
-            endpoint: '/api/auth/login',
+            endpoint: 'api/auth/login',
           },
           logout: {
             endpoint: '',

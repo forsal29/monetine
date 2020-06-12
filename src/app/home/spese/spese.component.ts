@@ -274,7 +274,7 @@ updateSpesa(spesa: Spese, id ?: number) {
         lSpesa.conto_da_desc = this.conti.find(ele_co => ele_co.id.toString() === lSpesa.conto_da.toString()).nome_conto;
       if (lSpesa.conto_a != null)
         lSpesa.conto_a_desc = this.conti.find(ele_co => ele_co.id.toString() === lSpesa.conto_a.toString()).nome_conto;
-      if (spesa.id === null) {
+      if (spesa.id === null || spesa.id === 0) {
         this.source.add(lSpesa);
         this.source.setSort([
           { field: 'data', direction: 'desc' }
