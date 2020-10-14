@@ -4,7 +4,9 @@
 
 export const environment = {
   production: false,
-  apiEndpoint: 'http://testmone-com.stackstaging.com/moneapi/'
+ // apiEndpoint: 'http://testmone-com.stackstaging.com/moneapi/'
+  apiEndpoint: 'http://192.243.100.129:8000/',
+
 };
 
 /*

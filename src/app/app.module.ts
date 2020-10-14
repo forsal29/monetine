@@ -46,6 +46,7 @@ import { environment } from '../environments/environment';
           baseEndpoint: environment.apiEndpoint,
           login: {
             endpoint: 'api/auth/login',
+            method: 'post',
           },
           logout: {
             endpoint: '',
